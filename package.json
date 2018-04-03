@@ -1,0 +1,31 @@
+{
+  "name": "node-spider",
+  "version": "1.0.0",
+  "description": "一个基于nodejs的爬虫，爬取电影天堂",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/qiangshuifish/node-spider.git"
+  },
+  "keywords": [
+    "nodejs",
+    "spider",
+    "mongodb",
+    "crawler",
+    "cheerio"
+  ],
+  "author": "wpy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/qiangshuifish/node-spider/issues"
+  },
+  "homepage": "https://github.com/qiangshuifish/node-spider#readme",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "crawler": "^1.1.2",
+    "mongodb": "^3.0.5"
+  }
+}
