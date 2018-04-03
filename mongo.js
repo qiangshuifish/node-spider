@@ -16,7 +16,7 @@ function initClient(callback) {
     MongoClient.connect(mongodb.url, function (err, db) {
         if (err) {
             console.log("mongodb连接失败")
-            return reject(err);
+            throw err;
         }
         client = db.db(mongodb.db);
         console.log("mongodb连接成功");
