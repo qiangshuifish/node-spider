@@ -163,12 +163,10 @@ const crawler = new Crawler({
     }
 });
 
-let client;
 /**
  * 初始化 mongo
  */
 mongo.initClient(function (client) {
-    module.client = client;
     crawler.queue('http://www.dytt8.net/html/gndy/dyzz/index.html');
 });
 
@@ -177,7 +175,6 @@ mongo.initClient(function (client) {
  * 爬取结束的回调
  */
 crawler.on('drain',function(){
-    module.client.closeClient()
     console.time("耗时：");
     console.log(`存储电影${insertCount}个，爬取列表页面${corruntListPage}`)
 });

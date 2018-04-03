@@ -10,15 +10,17 @@ const mongodb = {
 };
 
 let client;
+let db;
 
 function initClient(callback) {
 
-    MongoClient.connect(mongodb.url, function (err, db) {
+    return MongoClient.connect(mongodb.url, function (err, db) {
         if (err) {
             console.log("mongodb连接失败")
             throw err;
         }
         client = db.db(mongodb.db);
+        module.db = db;
         console.log("mongodb连接成功");
         callback(client);
     });
@@ -65,10 +67,4 @@ const findCont = function (collectionName,filter) {
     })
 };
 
-const closeClient = function () {
-    if(client){
-        client.Db.close();
-    }
-};
-
-module.exports = {insert,find,findCont,initClient,closeClient}
+module.exports = {insert,find,findCont,initClient}
